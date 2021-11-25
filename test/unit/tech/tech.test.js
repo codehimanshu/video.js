@@ -69,7 +69,7 @@ QUnit.test('should synthesize timeupdate events by default', function(assert) {
 
   tech.trigger('play');
 
-  this.clock.tick(250);
+  this.clock.tick(30);
   assert.equal(timeupdates, 1, 'triggered at least one timeupdate');
 
   tech.dispose();
@@ -84,16 +84,16 @@ QUnit.test('stops manual timeupdates while paused', function(assert) {
   });
 
   tech.trigger('play');
-  this.clock.tick(10 * 250);
+  this.clock.tick(10 * 30);
   assert.ok(timeupdates > 0, 'timeupdates fire during playback');
 
   tech.trigger('pause');
   timeupdates = 0;
-  this.clock.tick(10 * 250);
+  this.clock.tick(10 * 30);
   assert.equal(timeupdates, 0, 'timeupdates do not fire when paused');
 
   tech.trigger('play');
-  this.clock.tick(10 * 250);
+  this.clock.tick(10 * 30);
   assert.ok(timeupdates > 0, 'timeupdates fire when playback resumes');
   tech.dispose();
 });

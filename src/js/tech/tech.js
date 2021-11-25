@@ -346,7 +346,7 @@ class Tech extends Component {
       this.trigger({ type: 'timeupdate', target: this, manuallyTriggered: true });
 
     // 42 = 24 fps // 250 is what Webkit uses // FF uses 15
-    }, 250);
+    }, 30);
   }
 
   /**
